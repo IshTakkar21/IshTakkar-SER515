@@ -1,7 +1,10 @@
 package ptbs;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface ProductMenu {
-	public abstract void showMenu();
+	public abstract void showMenu(ClassProductList pl) throws FileNotFoundException, IOException;
 	
 	public abstract void showAddButton();
 	

@@ -12,7 +12,7 @@ public class Login {
 		loggedIn = false;
 	}
 	
-	public void logIn(int[] UserType) throws FileNotFoundException, IOException {
+	public void logIn(int[] UserType, String[] UserName) throws FileNotFoundException, IOException {
 		if(!loggedIn) {
 			HashMap<String, String> map = new HashMap<String, String>();
 			String line;
@@ -49,8 +49,10 @@ public class Login {
 			
 			if(map.containsKey(userName)) {
 				String pass = map.get(userName);
-				if(password.equals(pass))
+				if(password.equals(pass)) {
 					loggedIn = true;
+					UserName[0] = userName;
+				}	
 				else
 					System.out.println("Bad User!");
 			} else

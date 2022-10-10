@@ -1,17 +1,23 @@
 package ptbs;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public abstract class Person {
 	ProductMenu theProductMenu;
+	public ClassProductList ProductList;
+	public String PersonName;
 	
 	public Person() {
 		
 	}
 	
-	public Person(ProductMenu pm) {
+	public Person(ProductMenu pm, ClassProductList pl) {
 		this.theProductMenu = pm;
+		this.ProductList = pl;
 	}
 	
-	public abstract void showMenu();
+	public abstract void showMenu() throws FileNotFoundException, IOException;
 	
 	public abstract ProductMenu CreateProductMenu(int ProductType);
 	

@@ -7,10 +7,8 @@ public class ClassProductList extends Reminder {
 	
 	ArrayList<String> products = new ArrayList<String>();
 	
-	public ClassProductList() {
-		products.add("Prod1");
-		products.add("Prod2");
-		products.add("Prod3");
+	public ClassProductList(ArrayList<String> newProducts) {
+		products = newProducts;
 	}
 	
 	public Iterator createIterator() {

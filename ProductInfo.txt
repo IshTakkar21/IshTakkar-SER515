@@ -1,5 +1,6 @@
 Meat:Beef
 Meat:Pork
 Meat:Mutton
+Meat:Chicken
 Produce:Tomato
 Produce:Onion
