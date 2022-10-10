@@ -16,20 +16,26 @@ public class Facade {
 	public void facade() throws FileNotFoundException, IOException {
 		System.out.println("Currently in: Facade Class");
 		boolean isLoggedIn = login(temp);
-		UserType = temp[0];
-		
-		System.out.println("Select Product Type: \n1. Enter 0 for Meat \n2. Enter 1 for Produce");
-		Scanner sc = new Scanner(System.in);
-		if(sc.nextInt() == 0) {
-			theSelectedProduct = new Product(0);
-		} else if(sc.nextInt() == 1) {
-			theSelectedProduct = new Product(1);
-		} else {
-			System.out.println("Enter either 0 or 1!");
+		if(isLoggedIn) {
+			UserType = temp[0];
+//			System.out.println(UserType);
+			System.out.println("Select Product Type: \n1. Enter 0 for Meat \n2. Enter 1 for Produce");
+			Scanner sc = new Scanner(System.in);
+			int ProductType = sc.nextInt();
+			if(ProductType == 0) {
+				theSelectedProduct = new Product(0);
+				productOperation();
+				nProductCategory = theSelectedProduct.ProductType;
+			} else if(ProductType == 1) {
+				theSelectedProduct = new Product(1);
+				productOperation();
+				nProductCategory = theSelectedProduct.ProductType;
+			} else {
+				System.out.println("Enter either 0 or 1!");
+			}
+			
+			
 		}
-		
-		nProductCategory = theSelectedProduct.ProductType;
-		
 		
 	}
 	
@@ -80,6 +86,15 @@ public class Facade {
 	}
 	
 	public void productOperation() {
-		
+		if(UserType == 0) {
+			Buyer b = new Buyer();
+			b = new Buyer(b.CreateProductMenu(theSelectedProduct.ProductType));
+			b.showMenu();
+			
+		} else if(UserType == 1){
+			Seller s = new Seller();
+			s = new Seller(s.CreateProductMenu(theSelectedProduct.ProductType));
+			s.showMenu();
+		}
 	}
 }
