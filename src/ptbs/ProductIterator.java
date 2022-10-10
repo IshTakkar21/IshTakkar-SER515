@@ -2,7 +2,7 @@ package ptbs;
 
 import java.util.Iterator;
 
-public class OfferingIterator implements ListIterator {
+public class ProductIterator implements ListIterator {
 
 	@Override
 	public boolean hasNext(Iterator iterator) {
@@ -19,7 +19,7 @@ public class OfferingIterator implements ListIterator {
 
 	//TODO: add concrete logic to MoveToHead
 	@Override
-	public void MoveToHead(Iterator iterator) { 
+	public void MoveToHead(Iterator iterator) {
 		System.out.println("Moved iterator to head!");
 	}
 

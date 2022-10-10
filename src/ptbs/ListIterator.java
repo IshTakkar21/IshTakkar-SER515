@@ -1,11 +1,13 @@
 package ptbs;
 
+import java.util.Iterator;
+
 public interface ListIterator {
-	public abstract boolean hasNext();
+	public abstract boolean hasNext(Iterator iterator);
 	
-	public abstract Object Next();
+	public abstract Object Next(Iterator iterator);
 	
-	public abstract void MoveToHead();
+	public abstract void MoveToHead(Iterator iterator);
 	
-	public abstract void Remove();
+	public abstract void Remove(Iterator iterator);
 }

@@ -1,5 +1,6 @@
 package ptbs;
 
+import java.util.Iterator;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -15,10 +16,11 @@ public class Facade {
 	
 	public void facade() throws FileNotFoundException, IOException {
 		System.out.println("Currently in: Facade Class");
+		// calling the login logic
 		boolean isLoggedIn = login(temp);
 		if(isLoggedIn) {
+			
 			UserType = temp[0];
-//			System.out.println(UserType);
 			System.out.println("Select Product Type: \n1. Enter 0 for Meat \n2. Enter 1 for Produce");
 			Scanner sc = new Scanner(System.in);
 			int ProductType = sc.nextInt();
@@ -34,7 +36,23 @@ public class Facade {
 				System.out.println("Enter either 0 or 1!");
 			}
 			
+			//calling the iterator logic on Offerings
+			OfferingList ofl = new OfferingList();
+			Iterator iterateOff = ofl.createIterator();
+			OfferingIterator ofitr = new OfferingIterator();
 			
+			while(ofitr.hasNext(iterateOff)) {
+				System.out.println(ofitr.Next(iterateOff));
+			}
+			
+			//calling the iterator logic on Offerings
+			ClassProductList pl = new ClassProductList();
+			Iterator iterateProd = pl.createIterator();
+			ProductIterator plitr = new ProductIterator();
+			
+			while(plitr.hasNext(iterateProd)) {
+				System.out.println(plitr.Next(iterateProd));
+			}
 		}
 		
 	}
