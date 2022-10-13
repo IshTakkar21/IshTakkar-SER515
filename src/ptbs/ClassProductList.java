@@ -5,10 +5,12 @@ import java.util.Iterator;
 
 public class ClassProductList extends Reminder {
 	
+	Trading t;
 	ArrayList<String> products = new ArrayList<String>();
 	
 	public ClassProductList(ArrayList<String> newProducts) {
 		products = newProducts;
+		t = new Trading();
 	}
 	
 	public Iterator createIterator() {

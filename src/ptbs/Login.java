@@ -22,7 +22,7 @@ public class Login {
 			Scanner sc2 = new Scanner(System.in);
 			BufferedReader in;
 			
-			System.out.println("Enter UserType - 0 for buyer, 1 for seller: ");
+			System.out.println("Enter User Type - 0 for buyer, 1 for seller: ");
 			type = sc2.nextInt();
 			
 			UserType[0] = type;

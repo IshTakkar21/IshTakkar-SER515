@@ -1,5 +1,6 @@
 tutu:Beef
 tutu:Tomato
+tutu:Onion
 mimi:Beef
 mimi:Onion
 pepe:Beef
@@ -8,3 +9,6 @@ pepe:Onion
 ish:Tomato
 ish:Beef
 ish:Mutton
+aashi:Tomato
+aashi:Onion
+aashi:Beef

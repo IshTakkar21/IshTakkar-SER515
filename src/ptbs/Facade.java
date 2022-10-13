@@ -19,8 +19,9 @@ public class Facade {
 	int[] temp = {UserType};
 	String[] stringTemp = {userName};
 	
-	public void facade() throws FileNotFoundException, IOException {
+	public void facade() throws FileNotFoundException, IOException, InterruptedException {
 		System.out.println("Currently in: Facade Class");
+		Thread.sleep(1000);
 		// calling the login logic
 		boolean isLoggedIn = login(temp, stringTemp);
 		if(isLoggedIn) {
@@ -33,9 +34,10 @@ public class Facade {
 			else
 				return;
 			thePerson.PersonName = userName;
+			Thread.sleep(1000);
 			attachProductToUser();
 			
-			System.out.println("Select Product Type: \n1. Enter 0 for Meat \n2. Enter 1 for Produce");
+			System.out.println("Enter Product Type - 0 for Meat, 1 for Produce");
 			Scanner sc = new Scanner(System.in);
 			int ProductType = sc.nextInt();
 			
@@ -43,13 +45,17 @@ public class Facade {
 				theSelectedProduct = new Product(0);
 				nProductCategory = theSelectedProduct.ProductType;
 				productOperation();
+				Thread.sleep(1000);
 			} else if(ProductType == 1) {
 				theSelectedProduct = new Product(1);
 				nProductCategory = theSelectedProduct.ProductType;
 				productOperation();
+				Thread.sleep(1000);
 			} else {
 				System.out.println("Enter either 0 or 1!");
 			}
+			
+			remind();
 			
 //			//calling the iterator logic on Offerings
 //			OfferingList ofl = new OfferingList();
@@ -78,20 +84,23 @@ public class Facade {
 		
 	}
 	
-	public void decideBidding() {
+	public void viewOffering() {
 		
 	}
 	
-	public void discussBidding() {
+	public void markOffering() {
 		
 	}
 	
-	public void submitBidding() {
+	public void submitOffering() {
 		
 	}
 	
-	public void remind() {
-		
+	public void remind() throws InterruptedException {
+		System.out.println("Now in Remind function!");
+		Thread.sleep(1000);
+		NodeVisitor remind = new ReminderVisitor();
+		theProductList.accept(remind);
 	}
 	
 	public void createUser(UserInfoItem userInfoItem) {

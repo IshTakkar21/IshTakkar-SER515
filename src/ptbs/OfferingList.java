@@ -6,12 +6,10 @@ import java.util.Iterator;
 public class OfferingList {
 	ArrayList<String> offerings = new ArrayList<String>();
 	
-	public OfferingList() {
-		offerings.add("Pork");
-		offerings.add("Beef");
-		offerings.add("Chicken");
+	public OfferingList(ArrayList<String> newOfferings) {
+		offerings = newOfferings;
 	}
-	
+
 	public Iterator createIterator() {
 		return this.offerings.iterator();
 	}
