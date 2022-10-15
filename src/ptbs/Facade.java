@@ -76,24 +76,24 @@ public class Facade {
 		return l.loggedIn;
 	}
 	
-	public void addTrading() {
-		
+	public void addTrading(TradingMenu tm) {
+		tm.addTrading();
 	}
 	
-	public void viewTrading() {
-		
+	public void viewTrading(TradingMenu tm) {
+		tm.viewTrading();
 	}
 	
-	public void viewOffering() {
-		
+	public void viewOffering(OfferingMenu om) {
+		om.viewOffering();
 	}
 	
-	public void markOffering() {
-		
+	public void markOffering(OfferingMenu om) {
+		om.markOffering();
 	}
 	
-	public void submitOffering() {
-		
+	public void submitOffering(OfferingMenu om) {
+		om.submitOffering();
 	}
 	
 	public void remind() throws InterruptedException {
@@ -107,15 +107,9 @@ public class Facade {
 		userInfoItem.createUser();
 	}
 	
-	public void createProductList(ArrayList<String> list) {
-//		//calling the iterator logic on Products
-//		theProductList = new ClassProductList(list);
-//		Iterator iterateProd = theProductList.createIterator();
-//		ProductIterator plitr = new ProductIterator();
-//		
-//		while(plitr.hasNext(iterateProd)) {
-//			System.out.println(plitr.Next(iterateProd));
-//		}
+	public void createProductList() {
+		/*the product list has already been created in the attachProductToUser function*/
+		System.out.println(theProductList);
 	}
 	
 	public void attachProductToUser() throws FileNotFoundException, IOException {
@@ -134,7 +128,7 @@ public class Facade {
 	}
 	
 	public void selectProduct() {
-		
+		System.out.println(theSelectedProduct.ProductType);
 	}
 	
 	public void productOperation() throws FileNotFoundException, IOException {
