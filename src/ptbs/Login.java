@@ -42,6 +42,7 @@ public class Login {
 			}
 			in.close();
 			
+			System.out.println("**********************************************");
 			System.out.println("Enter Username: ");
 			userName = sc.nextLine();
 			System.out.println("Enter Password: ");
@@ -59,6 +60,7 @@ public class Login {
 				System.out.println("Bad User!");
 			
 		} else {
+			System.out.println("**********************************************");
 			System.out.println("Already Logged In!");
 		}
 	}

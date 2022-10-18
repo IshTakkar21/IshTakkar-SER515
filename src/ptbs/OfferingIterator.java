@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 public class OfferingIterator implements ListIterator {
 
+	//*******************Implementing the Iterator Design Pattern************************
 	@Override
 	public boolean hasNext(Iterator iterator) {
 		return iterator.hasNext();

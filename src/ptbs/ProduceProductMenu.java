@@ -22,7 +22,9 @@ public class ProduceProductMenu implements ProductMenu {
 			}
 		}
 		in.close();
-		
+		//*******************Implementing the Iterator Design Pattern************************
+		System.out.println("**********************************************");
+		System.out.println("Implementing Produce Product Iterator");
 		Iterator iterateProd = pl.createIterator();
 		ProductIterator plitr = new ProductIterator();
 		
@@ -32,6 +34,7 @@ public class ProduceProductMenu implements ProductMenu {
 				System.out.println(curr);
 			}
 		}
+		System.out.println("**********************************************");
 	}
 	
 	@Override

@@ -17,6 +17,8 @@ public class ClassProductList extends Reminder {
 		return this.products.iterator();
 	}
 	
+	
+	//*******************Implementing the Visitor Design Pattern************************
 	public Reminder accept(NodeVisitor visitor) {
 		return visitor.visitProduct(this);
 	}

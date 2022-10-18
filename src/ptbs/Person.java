@@ -18,9 +18,10 @@ public abstract class Person {
 	}
 	
 	public abstract void showMenu() throws FileNotFoundException, IOException;
-	
+	//for the Bridge Design Pattern
 	public abstract ProductMenu CreateProductMenu(int ProductType);
 	
+	//for the Factory Method Design Pattern
 	public void showAddButton() {
 		theProductMenu.showAddButton();
 	}

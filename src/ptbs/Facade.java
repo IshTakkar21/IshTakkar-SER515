@@ -19,9 +19,11 @@ public class Facade {
 	int[] temp = {UserType};
 	String[] stringTemp = {userName};
 	
-	public void facade() throws FileNotFoundException, IOException, InterruptedException {
+	//*******************Implementing the Facade Design Pattern************************
+	public Facade() throws FileNotFoundException, IOException {
+		System.out.println("**********************************************");
 		System.out.println("Currently in: Facade Class");
-		Thread.sleep(1000);
+		
 		// calling the login logic
 		boolean isLoggedIn = login(temp, stringTemp);
 		if(isLoggedIn) {
@@ -34,37 +36,30 @@ public class Facade {
 			else
 				return;
 			thePerson.PersonName = userName;
-			Thread.sleep(1000);
 			attachProductToUser();
 			
+			System.out.println("**********************************************");
 			System.out.println("Enter Product Type - 0 for Meat, 1 for Produce");
 			Scanner sc = new Scanner(System.in);
 			int ProductType = sc.nextInt();
 			
+			//*******************Implementing the Bridge and the Factory Design Patterns************************
 			if(ProductType == 0) {
 				theSelectedProduct = new Product(0);
 				nProductCategory = theSelectedProduct.ProductType;
 				productOperation();
-				Thread.sleep(1000);
+				
 			} else if(ProductType == 1) {
 				theSelectedProduct = new Product(1);
 				nProductCategory = theSelectedProduct.ProductType;
 				productOperation();
-				Thread.sleep(1000);
+				
 			} else {
+				System.out.println("**********************************************");
 				System.out.println("Enter either 0 or 1!");
 			}
 			
 			remind();
-			
-//			//calling the iterator logic on Offerings
-//			OfferingList ofl = new OfferingList();
-//			Iterator iterateOff = ofl.createIterator();
-//			OfferingIterator ofitr = new OfferingIterator();
-//			
-//			while(ofitr.hasNext(iterateOff)) {
-//				System.out.println(ofitr.Next(iterateOff));
-//			}
 			
 		}
 		
@@ -96,9 +91,9 @@ public class Facade {
 		om.submitOffering();
 	}
 	
-	public void remind() throws InterruptedException {
-		System.out.println("Now in Remind function!");
-		Thread.sleep(1000);
+	public void remind() {
+		System.out.println("**********************************************");
+		System.out.println("Implementing the Visitor Design Pattern");
 		NodeVisitor remind = new ReminderVisitor();
 		theProductList.accept(remind);
 	}
@@ -128,9 +123,11 @@ public class Facade {
 	}
 	
 	public void selectProduct() {
+		System.out.println("**********************************************");
 		System.out.println(theSelectedProduct.ProductType);
 	}
 	
+	//*******************Function to implement the Bridge and the Factory Design Patterns************************
 	public void productOperation() throws FileNotFoundException, IOException {
 		if(UserType == 0) {
 			Buyer b = new Buyer();
